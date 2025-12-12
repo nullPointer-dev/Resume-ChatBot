@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- MOBILE RESPONSIVENESS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TITLE & DESCRIPTION -->
+    <title>Resume Chatbot</title>
+    <meta name="description" content="An interactive AI-powered resume chatbot that answers questions about Shashank's experience, projects, and skills.">
+
+    <!-- FAVICON (you can replace this later) -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- THEME COLOR FOR BROWSERS -->
+    <meta name="theme-color" content="#7C3AED" />
+
+    <!-- PRELOAD FONTS (optional but recommended) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- CUSTOM FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- INITIAL THEME SCRIPT -->
+    <script>
+      // Load saved theme OR default system theme
+      const savedTheme = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+
+  <body class="bg-white dark:bg-black dark:text-white transition-colors duration-300">
+    <div id="root"></div>
+
+    <!-- MAIN REACT SCRIPT -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

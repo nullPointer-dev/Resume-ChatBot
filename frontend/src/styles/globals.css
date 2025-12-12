@@ -1,0 +1,10 @@
+/* @tailwindcss ignore */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Smooth animations */
+* {
+  transition: all 0.2s ease-in-out;
+}
