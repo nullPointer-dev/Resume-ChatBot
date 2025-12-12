@@ -1,0 +1,38 @@
+{
+  "basics": {
+    "name": "Shashank",
+    "headline": "B.Tech Biotechnology & Bioinformatics Student | AI, ML & DSA Enthusiast",
+    "email": "shashank@example.com",
+    "location": "Hyderabad, India",
+    "summary": "Motivated undergraduate student building skills in AI, ML, DSA and bioinformatics."
+  },
+  "skills": ["Python", "DSA", "Machine Learning", "Deep Learning", "Bioinformatics", "React", "SQL"],
+  "experience": [
+    {
+      "company": "ABC Research Lab",
+      "role": "AI Intern",
+      "start_date": "2024-05",
+      "end_date": "2024-07",
+      "achievements": [
+        "Built an ML pipeline for genomic feature extraction",
+        "Improved classification accuracy by 12%"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Protein Sequence Classifier",
+      "tech": ["Python", "PyTorch"],
+      "description": "A CNN-based classifier for protein sequences that achieved good performance on a curated dataset.",
+      "links": ["https://github.com/shashank/protein-cnn"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "IIT Hyderabad",
+      "degree": "B.Tech in Biotechnology & Bioinformatics",
+      "start_year": 2025,
+      "expected_graduation": 2029
+    }
+  ]
+}
