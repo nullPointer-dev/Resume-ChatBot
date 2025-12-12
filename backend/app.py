@@ -5,7 +5,7 @@ import os
 import requests
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
-
+from fastapi.middleware.cors import CORSMiddleware
 from vector_store import vector_store
 from flatten import load_resume_json, flatten_resume
 from rewrite import to_first_person
@@ -39,7 +39,13 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Resume Chatbot Backend", lifespan=lifespan)
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], #can restrict later
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # ---------------------------------------
 # Paths
 # ---------------------------------------
