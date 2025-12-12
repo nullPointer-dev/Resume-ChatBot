@@ -39,21 +39,22 @@ When user asks:
 ---
 
 ## 📁 Project Structure
+```md
 resume-chatbot-json/
 │
 ├── backend/
-│ ├── app.py
-│ ├── vector_store.py
-│ ├── flatten.py
-│ ├── rewrite.py
-│ ├── embed.py
-│ ├── example_resume.json
-│ ├── .env
+│   ├── app.py
+│   ├── vector_store.py
+│   ├── flatten.py
+│   ├── rewrite.py
+│   ├── embed.py
+│   ├── example_resume.json
+│   └── .env
 │
 ├── frontend/   (currently building)
 │
 └── README.md
-
+```
 
 ---
 
