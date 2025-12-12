@@ -51,9 +51,32 @@ resume-chatbot-json/
 │   ├── example_resume.json
 │   └── .env
 │
-├── frontend/   (currently building)
+├── frontend/
+│   ├── public/
+│   │   └── favicon.ico
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │
+│   │   ├── components/
+│   │   │   ├── typingloader.jsx
+│   │   │   └── themetoggle.jsx
+│   │   │
+│   │   ├── styles/
+│   │   │   └── globals.css
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   └── vite.config.js
 │
 └── README.md
+└── .gitignore
 ```
 
 ---
