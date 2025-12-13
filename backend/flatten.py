@@ -120,9 +120,17 @@ def flatten_resume(data: Dict[str, Any]) -> List[Dict[str, Any]]:
     # Education
     # -----------------------
     for edu in data.get("education", []):
+        courses = edu.get("courses", [])
+        courses_text = f" Relevant courses: {', '.join(courses)}." if courses else ""
+        
+        achievements = edu.get("achievements", [])
+        achievements_text = f" Achievements: {', '.join(achievements)}." if achievements else ""
+        
         text = (
             f"Education at {safe(edu.get('institution'))}, pursuing {safe(edu.get('degree'))} "
-            f"from {safe(edu.get('start_year'))} to {safe(edu.get('expected_graduation'))}."
+            f"from {safe(edu.get('start_year'))} to {safe(edu.get('expected_graduation'))}. "
+            f"GPA: {safe(edu.get('gpa'))}."
+            f"{courses_text}{achievements_text}"
         )
 
         chunks.append({
@@ -131,6 +139,154 @@ def flatten_resume(data: Dict[str, Any]) -> List[Dict[str, Any]]:
                 "type": "education",
                 "institution": safe(edu.get("institution"))
             }
+        })
+
+    # -----------------------
+    # Certifications
+    # -----------------------
+    for cert in data.get("certifications", []):
+        skills_list = cert.get("skills", [])
+        skills_text = f" Skills covered: {', '.join(skills_list)}." if skills_list else ""
+        
+        text = (
+            f"Certification: {safe(cert.get('name'))} "
+            f"from {safe(cert.get('issuer'))}, "
+            f"obtained on {safe(cert.get('date'))}. "
+            f"Credential ID: {safe(cert.get('credential_id'))}."
+            f"{skills_text}"
+        )
+
+        chunks.append({
+            "text": text.strip(),
+            "metadata": {
+                "type": "certification",
+                "name": safe(cert.get("name")),
+                "issuer": safe(cert.get("issuer"))
+            }
+        })
+
+    # -----------------------
+    # Awards
+    # -----------------------
+    for award in data.get("awards", []):
+        text = (
+            f"Award: {safe(award.get('title'))} "
+            f"received on {safe(award.get('date'))} "
+            f"from {safe(award.get('issuer'))}. "
+            f"Description: {safe(award.get('description'))}"
+        )
+
+        chunks.append({
+            "text": text.strip(),
+            "metadata": {
+                "type": "award",
+                "title": safe(award.get("title"))
+            }
+        })
+
+    # -----------------------
+    # Publications
+    # -----------------------
+    for pub in data.get("publications", []):
+        text = (
+            f"Publication: {safe(pub.get('title'))} "
+            f"in {safe(pub.get('journal'))}, {safe(pub.get('year'))}. "
+            f"Summary: {safe(pub.get('summary'))}"
+        )
+
+        chunks.append({
+            "text": text.strip(),
+            "metadata": {
+                "type": "publication",
+                "title": safe(pub.get("title"))
+            }
+        })
+
+    # -----------------------
+    # Volunteering
+    # -----------------------
+    for vol in data.get("volunteering", []):
+        responsibilities = vol.get("responsibilities", [])
+        resp_text = f" Responsibilities: {', '.join(responsibilities)}." if responsibilities else ""
+        
+        text = (
+            f"Volunteering at {safe(vol.get('organization'))} as {safe(vol.get('role'))} "
+            f"from {safe(vol.get('start_date'))} to {safe(vol.get('end_date'))}."
+            f"{resp_text}"
+        )
+
+        chunks.append({
+            "text": text.strip(),
+            "metadata": {
+                "type": "volunteering",
+                "organization": safe(vol.get("organization"))
+            }
+        })
+
+    # -----------------------
+    # Leadership
+    # -----------------------
+    for lead in data.get("leadership", []):
+        achievements = lead.get("achievements", [])
+        achievements_text = f" Achievements: {', '.join(achievements)}." if achievements else ""
+        
+        text = (
+            f"Leadership role: {safe(lead.get('role'))} "
+            f"at {safe(lead.get('organization'))} "
+            f"from {safe(lead.get('start_date'))} to {safe(lead.get('end_date'))}."
+            f"{achievements_text}"
+        )
+
+        chunks.append({
+            "text": text.strip(),
+            "metadata": {
+                "type": "leadership",
+                "role": safe(lead.get("role"))
+            }
+        })
+
+    # -----------------------
+    # Technical Skills
+    # -----------------------
+    tech_skills = data.get("technical_skills", {})
+    if tech_skills:
+        for category, skills_list in tech_skills.items():
+            if isinstance(skills_list, list):
+                text = f"Technical skills - {category.replace('_', ' ').title()}: {', '.join(skills_list)}."
+                chunks.append({
+                    "text": text.strip(),
+                    "metadata": {
+                        "type": "technical_skills",
+                        "category": category
+                    }
+                })
+
+    # -----------------------
+    # Languages
+    # -----------------------
+    for lang in data.get("languages", []):
+        text = (
+            f"Language: {safe(lang.get('language'))}, "
+            f"Proficiency: {safe(lang.get('proficiency'))}."
+        )
+
+        chunks.append({
+            "text": text.strip(),
+            "metadata": {
+                "type": "language",
+                "language": safe(lang.get("language"))
+            }
+        })
+
+    # -----------------------
+    # Interests
+    # -----------------------
+    interests = data.get("interests", [])
+    if interests:
+        text = f"Personal interests include: {', '.join(interests)}."
+        chunks.append({
+            "text": text.strip(),
+            "metadata": {"type": "interests"}
         })
 
     return chunks
