@@ -180,21 +180,45 @@ def chat_llm(query: str):
 def generate_llm_response(query: str, resume_text: str, sources: list):
     """
     Sends the query + retrieved resume text to Gemini
-    and returns a clean first-person answer.
+    and returns a well-formatted, markdown-styled answer.
     """
     url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
     prompt = f"""
-You are Shashank's resume assistant.
-Rewrite the following into a clean, concise, first-person answer.
+You are Shashank's resume assistant. Your role is to provide well-formatted, professional responses about their background.
 
-Query: "{query}"
-Resume info: "{resume_text}"
+User Query: "{query}"
+Resume Information: "{resume_text}"
 
-Rules:
-- Speak as Shashank ("I", "my")
-- Use only the resume information
-- Be concise and professional
+INSTRUCTIONS:
+1. Speak as Shashank using "I" and "my"
+2. Use ONLY information from the provided resume
+3. Format your response using markdown for better readability:
+   - Use **bold** for important terms
+   - Use bullet points (•) for lists of items
+   - Use numbered lists (1., 2., etc.) for sequential information
+   - Use ## for section headings when applicable
+   - Include links in [text](url) format when URLs are provided
+4. Keep responses concise but informative
+5. Be professional and clear
+
+Example format:
+## My Experience
+
+• **Role** at Company (dates): Description of work
+• Key achievement with metrics
+• Another significant accomplishment
+
+## Skills
+• Python, JavaScript, React
+• Machine Learning, Deep Learning
+• Team Leadership, Communication
+
+If the response includes projects, certifications, or awards with links, format them as:
+- **Project Name**: Brief description - [GitHub](url) | [Live Demo](url)
+- **Certification**: Name - Issuer (Date) - [Credential](url)
+
+Now generate your response:
 """
 
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
