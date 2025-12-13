@@ -8,11 +8,12 @@ export default function ThemeToggle() {
   );
 
   useEffect(() => {
+    const root = document.documentElement;
     if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+      root.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      root.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
   }, [theme]);
@@ -20,18 +21,12 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="
-        p-3 rounded-xl 
-        bg-white/10 dark:bg-black/20
-        hover:bg-white/20 dark:hover:bg-black/30
-        border border-white/20 
-        transition-all duration-300
-      "
+      className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors"
     >
       {theme === "dark" ? (
-        <SunIcon className="w-6 h-6 text-yellow-300" />
+        <SunIcon className="w-5 h-5 text-yellow-500" />
       ) : (
-        <MoonIcon className="w-6 h-6 text-purple-400" />
+        <MoonIcon className="w-5 h-5 text-gray-700" />
       )}
     </button>
   );
