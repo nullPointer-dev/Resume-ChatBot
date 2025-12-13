@@ -1,12 +1,32 @@
 {
   "basics": {
     "name": "Shashank",
-    "headline": "B.Tech Biotechnology & Bioinformatics Student | AI, ML & DSA Enthusiast",
+    "headline": "B.Tech Biotechnology & Bioinformatics Student | AI, ML, DS & Software Engineering Enthusiast",
     "email": "shashank@example.com",
     "location": "Hyderabad, India",
-    "summary": "Motivated undergraduate student building skills in AI, ML, DSA and bioinformatics."
+    "phone": "+91-9876543210",
+    "website": "https://shashank.dev",
+    "summary": "Highly motivated AI and Bioinformatics undergraduate at IIT Hyderabad with a passion for Machine Learning, Deep Learning, Genome Analysis, Software Engineering, and Full-Stack Development. Experienced in building scalable ML pipelines, deploying production-ready applications, and performing genomic data analysis. Strong background in DSA, problem solving, and research-driven development."
   },
-  "skills": ["Python", "DSA", "Machine Learning", "Deep Learning", "Bioinformatics", "React", "SQL"],
+
+  "skills": [
+    "Python", "C++", "JavaScript", "TypeScript",
+    "DSA", "Object-Oriented Programming",
+    "Machine Learning", "Deep Learning", "NLP",
+    "Computer Vision", "Bioinformatics",
+    "Data Engineering", "MLOps", "Docker", "FastAPI",
+    "React", "TailwindCSS", "PostgreSQL",
+    "Git", "Linux", "Cloud Deployment (AWS/GCP)"
+  ],
+
+  "technical_skills": {
+    "programming_languages": ["Python", "C++", "JavaScript", "SQL", "R"],
+    "ml_frameworks": ["PyTorch", "TensorFlow", "scikit-learn", "Keras"],
+    "bioinformatics_tools": ["BLAST", "Biopython", "Clustal Omega", "HMMER", "NCBI Tools"],
+    "development_tools": ["Git", "Docker", "VS Code", "Linux Shell"],
+    "soft_skills": ["Leadership", "Team Collaboration", "Communication", "Critical Thinking"]
+  },
+
   "experience": [
     {
       "company": "ABC Research Lab",
@@ -14,25 +34,152 @@
       "start_date": "2024-05",
       "end_date": "2024-07",
       "achievements": [
-        "Built an ML pipeline for genomic feature extraction",
-        "Improved classification accuracy by 12%"
+        "Developed an end-to-end ML pipeline for genomic feature extraction using Python, PyTorch, and Biopython.",
+        "Improved classifier accuracy by 12% using optimized CNN architectures and hyperparameter tuning.",
+        "Automated preprocessing of protein sequences, reducing manual work by 60%.",
+        "Collaborated with PhD researchers to interpret biological relevance of model predictions.",
+        "Implemented visualization dashboards for monitoring training metrics and dataset statistics."
+      ]
+    },
+    {
+      "company": "IIT Hyderabad Bioinformatics Group",
+      "role": "Undergraduate Research Assistant",
+      "start_date": "2025-01",
+      "end_date": "2025-05",
+      "achievements": [
+        "Assisted in research exploring evolutionary patterns in protein families using HMM-based sequence models.",
+        "Implemented a custom alignment scoring system improving local alignment performance.",
+        "Optimized large-scale dataset handling using multiprocessing and memory-efficient loaders.",
+        "Created publication-ready plots using Matplotlib and Seaborn."
+      ]
+    },
+    {
+      "company": "TechVerse Solutions",
+      "role": "Software Engineering Intern (Part-Time)",
+      "start_date": "2023-08",
+      "end_date": "2024-01",
+      "achievements": [
+        "Built full-stack features for an internal analytics dashboard using React and FastAPI.",
+        "Designed REST APIs with token-based authentication.",
+        "Refactored legacy code improving performance by 40%.",
+        "Wrote unit tests achieving 85% code coverage."
       ]
     }
   ],
+
   "projects": [
     {
       "name": "Protein Sequence Classifier",
-      "tech": ["Python", "PyTorch"],
-      "description": "A CNN-based classifier for protein sequences that achieved good performance on a curated dataset.",
+      "tech": ["Python", "PyTorch", "NumPy"],
+      "description": "Designed a CNN-based classifier to categorize protein sequences using encoded amino acid representations.",
+      "features": [
+        "Custom convolution layers for sequence data",
+        "Achieved strong performance on curated datasets",
+        "Integrated Grad-CAM for interpretability"
+      ],
       "links": ["https://github.com/shashank/protein-cnn"]
+    },
+    {
+      "name": "Genome Variant Detection Pipeline",
+      "tech": ["Python", "Pandas", "scikit-learn"],
+      "description": "Built a pipeline for detecting genomic variants using ML-based pattern recognition.",
+      "links": ["https://github.com/shashank/genome-pipeline"]
+    },
+    {
+      "name": "Resume Chatbot",
+      "tech": ["React", "FastAPI", "RAG", "Gemini API"],
+      "description": "Developed a custom RAG-powered chatbot capable of answering queries from structured resume data.",
+      "links": ["https://github.com/shashank/resume-chatbot"]
+    },
+    {
+      "name": "AI-Powered Notes Summarizer",
+      "tech": ["Python", "Transformers", "Flask"],
+      "description": "Built an NLP-based summarization system for academic notes using pre-trained transformer models.",
+      "links": ["https://github.com/shashank/notes-summarizer"]
     }
   ],
+
   "education": [
     {
       "institution": "IIT Hyderabad",
       "degree": "B.Tech in Biotechnology & Bioinformatics",
       "start_year": 2025,
-      "expected_graduation": 2029
+      "expected_graduation": 2029,
+      "courses": [
+        "Data Structures & Algorithms",
+        "Machine Learning",
+        "Bioinformatics Algorithms",
+        "Neural Networks & Deep Learning",
+        "Computational Genomics",
+        "Database Systems",
+        "Probability & Statistics"
+      ],
+      "achievements": [
+        "Department Topper (Bioinformatics coursework)",
+        "ML Coursework Grade: A+"
+      ]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "Deep Learning Specialization",
+      "issuer": "Coursera",
+      "year": 2024
+    },
+    {
+      "name": "Bioinformatics for Beginners",
+      "issuer": "edX",
+      "year": 2023
+    },
+    {
+      "name": "Google Data Analytics",
+      "issuer": "Google",
+      "year": 2023
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "CNN Approaches for Protein Sequence Classification",
+      "journal": "Journal of Computational Biology (Under Review)",
+      "year": 2025,
+      "summary": "Explores deep learning approaches for protein structure prediction and sequence family classification."
+    }
+  ],
+
+  "volunteering": [
+    {
+      "organization": "IITH Coding Club",
+      "role": "Mentor",
+      "year": "2025",
+      "responsibilities": [
+        "Mentor juniors in DSA and Python",
+        "Conduct weekly problem-solving contests"
+      ]
+    }
+  ],
+
+  "leadership": [
+    {
+      "role": "Team Lead - ML Project Group",
+      "organization": "IIT Hyderabad",
+      "year": 2024,
+      "achievements": [
+        "Led a team of 5 students to build novel ML applications",
+        "Managed sprint planning and code reviews"
+      ]
+    }
+  ],
+
+  "awards": [
+    {
+      "title": "Smart India Hackathon Finalist",
+      "year": 2024
+    },
+    {
+      "title": "Top 1% in Kaggle Bioinformatics Mini-Challenge",
+      "year": 2023
     }
   ]
 }
